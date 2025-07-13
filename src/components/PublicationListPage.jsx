@@ -41,6 +41,9 @@ export default function PublicationListPage() {
                 Tanggal Rilis
               </th>
               <th scope="col" className="px-6 py-3 text-center text-sm">
+               Deskripsi
+              </th>
+              <th scope="col" className="px-6 py-3 text-center text-sm">
                 Sampul
               </th>
               <th scope="col" className="px-6 py-3 text-center text-sm">
@@ -61,6 +64,11 @@ export default function PublicationListPage() {
                   {pub.title}
                 </td>
                 <td className="px-6 py-4 text-gray-600">{pub.releaseDate}</td>
+                <td className="px-6 py-4 text-gray-600">
+                  {pub.description.length > 100
+                    ? `${pub.description.substring(0, 100)}...`
+                    : pub.description}
+                </td>
                 <td className="px-6 py-4 flex justify-center items-center">
                   <img
                     src={pub.coverUrl}
